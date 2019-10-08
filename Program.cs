@@ -6,6 +6,10 @@ namespace Planner
     {
         static void Main(string[] args)
         {
+            City Megalopis = new City ("Megalopis", 1985);
+            Megalopis.mayor = "Robert Pattinson";
+
+
             Building FiveOneTwoEigth = new Building("512 8th Avenue");
             {
                 FiveOneTwoEigth.Width = 800;
@@ -15,6 +19,7 @@ namespace Planner
                 FiveOneTwoEigth.Purchase("Michael");
                 FiveOneTwoEigth.Designer("TurdBoi");
                 FiveOneTwoEigth.Description();
+                Megalopis.Buildings.Add(FiveOneTwoEigth);
 
             }
 
@@ -27,6 +32,7 @@ namespace Planner
                 ThreeTwoOne.Purchase("Ryan Gosling");
                 ThreeTwoOne.Designer("Jakey G");
                 ThreeTwoOne.Description();
+                Megalopis.Buildings.Add(ThreeTwoOne);
             }
             Building ThreeFiveOneZero = new Building("3510 Omega Drive");
 
@@ -37,8 +43,12 @@ namespace Planner
                 ThreeFiveOneZero.Purchase("Joaquin Phoenix");
                 ThreeFiveOneZero.Designer("Leonardo DeVinci");
                 ThreeFiveOneZero.Description();
+                Megalopis.Buildings.Add(ThreeFiveOneZero);
 
-
+                foreach (Building building in Megalopis.Buildings)
+            {
+                building.Description();
+            }
 
         }
 
